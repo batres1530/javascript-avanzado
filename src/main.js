@@ -2,6 +2,7 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { environmentsComponet } from './concepts/01-environments.js'
+import { CollbacksComponent } from './concepts/02-callbacks.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -25,6 +26,6 @@ document.querySelector('#app').innerHTML = `
 
 
 const element = document.querySelector('.card');
-
-environmentsComponet(element);
+// enviamos las variables a la funcion
+CollbacksComponent(element);
 
