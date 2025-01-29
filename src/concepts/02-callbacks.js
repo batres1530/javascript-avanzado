@@ -1,5 +1,7 @@
 import { heroes } from './data/heroes.js';
 
+import { heroes } from './data/heroes.js';
+
 /**
  * 
  * @param {HTMLMediaElement} element 
@@ -33,3 +35,7 @@ const findHero = (id, callback) => {
     }
     callback(null,hero); 
 };
+
+
+
+
