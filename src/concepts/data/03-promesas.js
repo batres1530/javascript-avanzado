@@ -1,29 +1,34 @@
-import { heroes } from "./heroes";
-
-export const promesasComponent = (element) => {
+import { heroes } from '../data/heroes'; // importamos el archivo heroes.js
+ 
+export const promesasComponent = (element) => { // creamos la funcion promesasComponent
     
-    const renderHero = (hero) => {
+    const renderHero = (hero) => {  // creamos la funcion renderHero esta funcion se ejecutara cuando la promesa se resuelva
         element.innerHTML = hero.name;
     };
 
-    const id1 = '5d86371f9f80b591f499df32'; // ID de Hulk
-    findHero(id1)
-    .then(superHero => renderHero(superHero))
-    .catch(error => {
-        console.error(error);
-        element.innerHTML = error;
-    });
+    const renderError = (error)=> { // creamos la funcion renderError esta funcion se ejecutara cuando la promesa no se resuelva
+        element.innerHTML = `
+        <h1>Error: </h1>
+        <h3>${error}</h3>`;
 
+    };
+
+
+    const id1 = '5d86371f2343e37870b91ef1'; // ID de del superhero que sale de el archivo heroes.js
+
+    findHero(id1) // llamamos a la funcion findHero y le pasamos el id1
+        .then(renderHero) // llamamos a la funcion renderHero cuando la promesa se resuelva
+        .catch(renderError); // llamamos a la funcion renderError cuando la promesa no se resuelva
+      
 };
 
-const findHero = (id) => {
-    return new Promise((resolve, reject) => { 
+const findHero = (id) => { // creamos la funcion findHero y de parametro le pedimos id del heroe
+    return new Promise((resolve, reject) => { // creamos una promesa y le pasamos dos parametros que siempre van resolve y reject 
+        const hero = heroes.find(hero => hero.id === id); // creamos la logic para buscar el heroe en el array de heroes
 
-        const hero = heroes.find(hero => hero.id === id);
-         
-        if (hero) {
+        if (hero) { // si el heroe se encuentra se ejecutara esto del resolve
             resolve(hero);
-        } else {
+        } else { // si el heroe no se encuentra ejecutara esto del reject
             reject(`Heroe con el id ${id} no se encuentra`);
         }
     });
