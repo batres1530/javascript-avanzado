@@ -5,6 +5,7 @@ import { environmentsComponet } from './concepts/01-environments.js'
 import { CollbacksComponent } from './concepts/02-callbacks.js'
 import { promesasComponent } from './concepts/03-promesas.js'
 import { PromesiRaceComponent } from './concepts/04-.Promise-Race.js'
+import {asyncComponet} from './concepts/05-asnyc.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -29,5 +30,5 @@ document.querySelector('#app').innerHTML = `
 
 const element = document.querySelector('.card');
 // enviamos las variables a la funcion
-PromesiRaceComponent(element);
+asyncComponet(element);
 

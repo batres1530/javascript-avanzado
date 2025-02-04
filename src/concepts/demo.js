@@ -1,8 +1,4 @@
-/**
- * 
- * @param {HTMLMediaElement} element 
- */
 export const  environmentsComponet = (element) => {
-    console.log('demoComponent');
+    console.log('Esta funcionando correctamente :)');
 
 };

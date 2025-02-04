@@ -3,6 +3,10 @@
  * @param {HTMLMediaElement} element 
  */
 export const PromesiRaceComponent = (element) => {
+
+    element.innerHTML = 'Cargando....';
+
+
     const renderValue = (value) => {
         element.innerHTML = value;
     };
