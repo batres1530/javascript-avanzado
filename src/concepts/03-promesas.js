@@ -1,4 +1,4 @@
-import { heroes } from '../data/heroes'; // importamos el archivo heroes.js
+import { heroes } from './data/heroes'; // importamos el archivo heroes.js
  
 export const promesasComponent = (element) => { // creamos la funcion promesasComponent
     
