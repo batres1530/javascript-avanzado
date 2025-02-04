@@ -21,67 +21,36 @@ export const promesasComponent = (element) => { // creamos la funcion promesasCo
 
     const id1 = '5d86371f2343e37870b91ef1'; // ID de del superhero que sale de el archivo heroes.js
     const id2 = '5d86371fd55e2e2a30fe1cc4'; // ID de del superhero que sale de el archivo heroes.js
-
-
-    Promise.all([
-        findHero(id1),
-        findHero(id2),
-    ]).then( ([hero1,hero2]) => renderTwoHeros(hero1, hero2))
-    .catch(renderError);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//! **********************esta es la forma dos del promesi hell*********************************************************
-    // let hero1;
-
-    // findHero(id1) 
-    // .then ( (hero)  => {
-    //     hero1 = hero;
-    //     return findHero(id2)
-    // }) .then(hero2 => {
-    //     renderTwoHeros(hero1, hero2);
-    // })
-    // .catch(renderError);
     
+    let hero1;
+
+
+
+    //! esto es un promesa all
+    Promise.all(
+        [findHero(id1),
+         findHero(id2)
+    ])
+    .then ( ([hero1, hero2] ) => renderTwoHeros(hero1, hero2))
+    .catch(renderError); 
+       
 
 
 
 
-//! **********************esta es la forma uno del promesi hell*********************************************************
-    // findHero(id1) 
-    //     .then ( (hero1)  => {
+
+    //! Esto es un promesa hell 
+    // findHero(id1)
+    //     .then((hero1) =>{
     //         findHero(id2)
     //             .then(hero2 => {
     //                 renderTwoHeros(hero1, hero2);
     //             })
-
+    //             .catch(renderError);
     //     })
     //     .catch(renderError);
 
- //! esto es la forma de consumir un promesa
-    // findHero(id1) // llamamos a la funcion findHero y le pasamos el id1
-       // .then(renderHero) // llamamos a la funcion renderHero cuando la promesa se resuelva
-        //.catch(renderError); // llamamos a la funcion renderError cuando la promesa no se resuelva
-
+   
        
 };
 
