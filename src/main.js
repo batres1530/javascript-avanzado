@@ -8,6 +8,7 @@ import { PromesiRaceComponent } from './concepts/04-.Promise-Race.js'
 import {asyncComponet} from './concepts/05-asnyc.js'
 import {asyncAwaitComponet} from './concepts/06-asnyc-await.js'
 import { asyncAwait2Componets } from './concepts/07-async-await.js'
+import {forAwaitComponent } from './concepts/08-for-await.js' 
 
 
 document.querySelector('#app').innerHTML = `
@@ -32,5 +33,5 @@ document.querySelector('#app').innerHTML = `
 
 const element = document.querySelector('.card');
 // enviamos las variables a la funcion
-asyncAwait2Componets(element);
+forAwaitComponent(element);
 
