@@ -9,6 +9,7 @@ import {asyncComponet} from './concepts/05-asnyc.js'
 import {asyncAwaitComponet} from './concepts/06-asnyc-await.js'
 import { asyncAwait2Componets } from './concepts/07-async-await.js'
 import {forAwaitComponent } from './concepts/08-for-await.js' 
+import { genradorFuncionesComponent } from './concepts/09-generadorFunciones.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -33,5 +34,5 @@ document.querySelector('#app').innerHTML = `
 
 const element = document.querySelector('.card');
 // enviamos las variables a la funcion
-forAwaitComponent(element);
+genradorFuncionesComponent(element);
 

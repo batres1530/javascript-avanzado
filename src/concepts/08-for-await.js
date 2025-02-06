@@ -12,7 +12,15 @@ console.log('Inicio');
     // }
    
     //     element.innerHTML = `el heroe con id ${id} no existe`;
-        
+    
+    const heroid = heroes.map ( hero => hero.id );
+    console.log(heroid);
+
+    const heroPromises = getHeroesAsync( heroid );
+
+    for await (const hero of heroPromises) {
+        element.innerHTML += `<br/> ${hero.name}`;
+    }
 }
 
 const getHeroesAsync = ( heroIds ) => {
